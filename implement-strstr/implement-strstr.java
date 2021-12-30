@@ -1,54 +1,17 @@
 class Solution {
     public int strStr(String haystack, String needle) {
-        if(needle.length() == 0) return 0;
-        
-        if(haystack.length() == -1) return -1;
-        
-        
-        for(int i = 0; i < haystack.length(); i++){
-            
-            if(i + needle.length() > haystack.length()) break;
-            
-            for(int j = 0; j < needle.length(); j++){
-                
-                if(haystack.charAt(i+j) != needle.charAt(j)) break;
-                
-                if(j == needle.length()-1) return i;
-                
-            }
-            
+         int l1 = haystack.length(), l2 = needle.length();
+        if (l1 < l2) {
+            return -1;
+        } else if (l2 == 0) {
+            return 0;
         }
-        
-        return -1;
-        /*
-        
-        if(needle.length() > 1 && haystack.length() > 1){
-            
-            for(int i = 0; i <= haystack.length() - needle.length(); i++){
-                String temp = haystack.substring(i, i+needle.length());
-                System.out.println("Temp: " + temp);
-                if(temp.equals(needle)){
-                    return i;
-                }
+        int threshold = l1 - l2;
+        for (int i = 0; i <= threshold; ++i) {
+            if (haystack.substring(i,i+l2).equals(needle)) {
+                return i;
             }
-            
-        }else if(needle.length() == 1 && haystack.length() > 1){
-            char[] tempArr = needle.toCharArray();
-            char[] targetArr = haystack.toCharArray();
-            for(int i = 0; i < haystack.length(); i++){
-                
-                if(tempArr[0] == targetArr[i]){
-                    return i;
-                }
-                
-            }
-        }else{
-            
         }
-            
-        
         return -1;
-        */
-        
     }
 }

@@ -21,3 +21,21 @@ public:
         return -1;
     }
 };
+
+/*
+
+
+for(int i = 0; i< nums.size(); i++)
+    
+    int count = 1
+    for(int j = 0; j < nums.size(); j++){
+        if(num[i] = num[j]){
+            count++;
+        }
+    }
+    if(count != 2){
+        return num[i];
+    }
+}
+
+*/

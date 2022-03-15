@@ -1,31 +1,24 @@
+
 class Solution {
 public:
-    bool check_key(map<int, int> m, int key)
-{
-    // Key is not present
-    if (m.find(key) == m.end())
-        return true;
- 
-    return false;
-}
+    
+    
     
     vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map <int, int> mp;
         vector <int> res;
+        map <int, int> hm;
         
         
-        
-        for(int i = 0; i < nums.size(); i++){
-            if(mp.find(nums[i]) != mp.end()){
-                
-                int index = mp[nums[i]];
-                res.push_back(index);
+        for(int i = 0; i< nums.size(); i++){
+            if(     hm.find(nums[i]) != hm.end()       ){
                 res.push_back(i);
+                res.push_back(hm[nums[i]]);
                 return res;
-                
             }else{
-                //mp.insert(pair<int, int>(target-nums[i], i) );
-                mp[target-nums[i]] = i;
+                // hm.put(i, nums[i]);
+                //hm.insert({i, nums[i]});
+                
+                hm[target-nums[i]] = i;
             }
         }
         

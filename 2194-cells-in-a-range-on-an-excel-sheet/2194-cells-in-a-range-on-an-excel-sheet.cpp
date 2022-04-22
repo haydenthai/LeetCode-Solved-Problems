@@ -5,13 +5,13 @@ public:
        
         int finishRow = s[4] - '0';
         int startRow = s[1] -   '0';
-        char startChar = s[0];
-        char finishChar = s[3];
+        int startChar = s[0];
+        int finishChar = s[3];
         
         while(startChar <= finishChar){
             for(int i = startRow; i <= finishRow; i++){
                 stringstream ss;
-                ss << startChar << (char)(i + '0');
+                ss << (char)startChar << (char)(i + '0');
                 res.push_back(ss.str());
             }        
             startChar++;

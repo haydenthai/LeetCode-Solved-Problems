@@ -1,8 +1,8 @@
 class Solution {
 public:
-    vector<int> sortArrayByParity(vector<int>& nums) {
-        for (int i = 0, j = 0; j < nums.size(); j++)
-            if (nums[j] % 2 == 0) swap(nums[i++], nums[j]);
-        return nums;
+    vector<int> sortArrayByParity(vector<int>& A) {
+            auto is_even = [] (auto e) { return e % 2 == 0; };
+            partition (A.begin (), A.end (), is_even);
+        return A;
     }
 };

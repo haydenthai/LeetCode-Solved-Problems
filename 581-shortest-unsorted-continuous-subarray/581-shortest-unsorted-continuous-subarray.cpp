@@ -6,7 +6,7 @@ public:
         
         int l = 0, r = nums.size()-1;
         
-        while(l <= nums.size()-1 && nums[l] == sorted[l]){
+        while(l < nums.size() && nums[l] == sorted[l]){
             l++;
         }
         

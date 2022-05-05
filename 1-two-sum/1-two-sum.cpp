@@ -11,7 +11,7 @@ public:
             }else{
                 res.push_back(i);
                 res.push_back(hm[target - nums[i]]);
-                
+                return res;
             }
             
         }

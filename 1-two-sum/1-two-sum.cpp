@@ -1,40 +1,20 @@
-// bool check_key(map<int, int> m, int key){
-    
-//     if(m.find(key) != m.end()){
-//         return true;
-//     }
-    
-//     return false;
-// }
-
-
 class Solution {
 public:
-    
-    
-    
     vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> hm;
         vector <int> res;
-        map <int, int> hm;
         
-        
-        for(int i = 0; i< nums.size(); i++){
-            
-//             hm.find(nums[i]) != hm.end()
-            
-// 
-            if(     hm.find(nums[i]) != hm.end()     ){
-                res.push_back(i);
-                res.push_back(hm[nums[i]]);
-                return res;
+        for(int i = 0; i < nums.size(); i++){
+            //um.find(23) == um.end()
+            if( hm.find(target - nums[i]) == hm.end()){
+                hm[nums[i]] = i;
             }else{
-                // hm.put(i, nums[i]);
-                //hm.insert({i, nums[i]});
+                res.push_back(i);
+                res.push_back(hm[target - nums[i]]);
                 
-                hm[target-nums[i]] = i;
             }
+            
         }
-        
         return res;
     }
 };

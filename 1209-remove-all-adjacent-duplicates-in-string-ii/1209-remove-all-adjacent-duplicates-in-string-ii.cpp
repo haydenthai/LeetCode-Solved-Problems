@@ -8,7 +8,7 @@ public:
             if (j > 0 && s[j] == s[j - 1]) cnt[j] = cnt[j - 1] + 1;
             else cnt[j] = 1;
             if (cnt[j] == k) j -= k;
-  }
-  return s.substr(0, j);
+        }
+        return s.substr(0, j);
     }
 };
